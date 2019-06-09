@@ -9,6 +9,22 @@ import {
 } from "material-ui";
 import ZoomIn from "material-ui/svg-icons/action/zoom-in";
 class ImageResults extends Component {
+  state = {
+    open: false,
+    currentImg: ""
+  };
+  handleOpen = img => {
+    this.setState({
+      open: true,
+      currentImg: img
+    });
+  };
+  handleClose = () => {
+    this.setState({
+      open: false,
+      currentImg: ""
+    });
+  };
   render() {
     let imageListContent;
     const { images } = this.props;
@@ -26,7 +42,9 @@ class ImageResults extends Component {
                 </span>
               }
               actionIcon={
-                <IconButton>
+                <IconButton
+                  onClick={() => this.handleOpen(image.largeImageURL)}
+                >
                   <ZoomIn color="white" />
                 </IconButton>
               }
@@ -39,7 +57,27 @@ class ImageResults extends Component {
     } else {
       imageListContent = null;
     }
-    return <div>{imageListContent}</div>;
+
+    const action = [
+      <FlatButton label="close" primary={true} onClick={this.handleClose} />
+    ];
+    return (
+      <div>
+        {imageListContent}
+        <Dialog
+          actions={action}
+          modal={false}
+          open={this.state.open}
+          onRequestClose={this.handleClose}
+        >
+          <img
+            src={this.state.currentImg}
+            alt=""
+            style={{ width: "100%", minHeight: "100%" }}
+          />
+        </Dialog>
+      </div>
+    );
   }
 }
 ImageResults.propTypes = {

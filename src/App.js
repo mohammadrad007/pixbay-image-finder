@@ -7,8 +7,10 @@ class App extends Component {
   render() {
     return (
       <MuiThemeProvider>
-        <NavBar />
-        <Search />
+        <>
+          <NavBar />
+          <Search />
+        </>
       </MuiThemeProvider>
     );
   }
