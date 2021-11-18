@@ -1,0 +1,72 @@
+.formSearch {
+  display: flex;
+  padding: 2rem;
+  justify-content: center;
+}
+.formSearch input {
+  width: 16rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+}
+.formSearch select {
+  width: 5rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #fff;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+  margin: 0 1rem;
+}
+.formSearch select > option {
+  text-align: center;
+  padding: 0.5rem;
+}
+.formSearch button {
+  font-size: 0.87rem;
+  width: 8rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+  cursor: pointer;
+}
+.errorBox {
+  display: flex;
+  justify-content: center;
+}
+.errorBox p {
+  width: 10rem;
+  background-color: rgb(185, 117, 117);
+  color: #fff;
+  text-align: center;
+  padding: 0.2rem;
+  border-radius: 8px;
+  font-size: 0.87rem;
+}
+.resultBox {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 3rem;
+}
+@media only screen and (max-width: 600px) {
+  .formSearch {
+    flex-wrap: wrap;
+  }
+  .formSearch input,
+  .formSearch button,
+  .formSearch select {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+  .formSearch button,
+  .formSearch select {
+    padding: 0.5rem;
+  }
+  .resultBox {
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+}

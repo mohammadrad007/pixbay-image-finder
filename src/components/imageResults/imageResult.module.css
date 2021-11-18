@@ -1,0 +1,60 @@
+.imageItem {
+  width: 25%;
+  margin: 0.5rem;
+  box-shadow: 1px 1px 2px #ddd;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+.imageItem:hover {
+  box-shadow: 2px 3px 13px 7px #ddd;
+  cursor: pointer;
+}
+.image {
+  margin-bottom: 1rem;
+  position: relative;
+}
+.image:hover .fullScreen {
+  display: block;
+}
+.image img {
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+}
+.fullScreen {
+  width: 100%;
+  display: none;
+  position: absolute;
+  bottom: 0;
+  text-align: right;
+  transition: all 0.5s;
+  color: white;
+  background-color: rgba(202, 199, 199, 0.212);
+}
+.fullScreen img {
+  width: 2rem;
+  padding: 0.4rem;
+}
+.imageUser {
+  font-weight: bold;
+  margin-left: 0.5rem;
+  font-size: 0.87rem;
+}
+.imageItemFooter {
+  display: flex;
+  padding: 4rem 0 1rem;
+}
+.imageItemFooter span {
+  font-size: 0.7rem;
+  margin: 0 1rem;
+}
+@media only screen and (max-width: 1000px) {
+  .imageItem {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .imageItem {
+    width: 100%;
+  }
+}
