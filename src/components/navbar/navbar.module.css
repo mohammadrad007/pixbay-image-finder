@@ -1,5 +1,21 @@
 .navbar {
   width: 100%;
-  background-color: aquamarine;
-  padding: 2rem 5rem;
+  display: flex;
+  background-image: url("./../../assesst/bg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 3rem 2rem;
+}
+.navbar h2 {
+  color: rgb(251, 253, 255);
+}
+.navbar span {
+  color: antiquewhite;
+  font-size: 0.6rem;
+}
+@media only screen and (max-width: 600px) {
+  .navbar {
+    justify-content: center;
+    padding: 3rem 0;
+  }
 }
