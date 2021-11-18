@@ -1,5 +1,7 @@
 import React from "react";
-import AppBar from "material-ui/AppBar";
+import classes from "./navbar.module.css";
 
-const NavBar = props => <AppBar title="PixBay Image Finder" />;
+const NavBar = () => (
+  <div className={classes.navbar}>PixBay Image Finder Version 2</div>
+);
 export default NavBar;
