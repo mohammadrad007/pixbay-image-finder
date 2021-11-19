@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import classes from "./imageResult.module.css";
 import fullScreen from "./../../assesst/full.svg";
-import SingleImage from "../singleImage/SingleImage";
-const ImageResult = ({ images }) => {
-  const [imageLink, setImageLink] = useState("");
-
-  console.log(images);
+const ImageResult = ({ images, showSingleImage }) => {
   return (
     <>
       {images?.map(
@@ -26,7 +22,14 @@ const ImageResult = ({ images }) => {
                 <img
                   src={fullScreen}
                   alt={`full screen ${user} ${type}`}
-                  onClick={() => setImageLink(largeImageURL)}
+                  onClick={() =>
+                    showSingleImage({
+                      url: largeImageURL,
+                      name: user,
+                      type: type,
+                      tags: tags,
+                    })
+                  }
                 />
               </div>
             </div>
@@ -39,7 +42,6 @@ const ImageResult = ({ images }) => {
           </div>
         )
       )}
-      {imageLink && <SingleImage imageLink={imageLink} />}
     </>
   );
 };

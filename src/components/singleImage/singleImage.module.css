@@ -1,14 +1,34 @@
 .container {
-  width: 80vw;
-  height: 90vh;
-  position: absolute;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(39, 38, 38, 0.24);
+  top: 0;
+  overflow: hidden;
+}
+.singleImageBox {
+  width: 70%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  margin-bottom: 5rem;
+  margin: 4rem auto;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.singleImageHeader {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+.headerClose {
+  width: 1.5rem;
+  cursor: pointer;
 }
 .container img {
   width: 100%;
   height: 100%;
-  border-radius: 12px;
+  border-radius: 10px;
 }

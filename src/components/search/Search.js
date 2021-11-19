@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import ImageResults from "../imageResults/ImageResults";
 
 import { getImageFromPixbay } from "../../services/search";
 import classes from "./search.module.css";
-const Search = () => {
+const Search = ({ getImagesFromPixbay }) => {
   const [text, setText] = useState("dog");
   const [error, setError] = useState("");
   const [amount, setAmount] = useState(5);
-  const [result, setResult] = useState([]);
 
   const handleSearchSubmit = (e) => {
     setError("");
@@ -16,7 +14,7 @@ const Search = () => {
       setError("");
       getImageFromPixbay(text, amount).then((res) => {
         if (res.status === 200) {
-          setResult(res.data.hits);
+          getImagesFromPixbay(res.data.hits);
         }
       });
     } else {
@@ -48,13 +46,6 @@ const Search = () => {
       </form>
       <div className={classes.errorBox}>
         {error.length > 0 && <p>{error}</p>}
-      </div>
-      <div className={classes.resultBox}>
-        {result.length > 0 ? (
-          <ImageResults images={result} />
-        ) : (
-          <p>Search Something</p>
-        )}
       </div>
     </>
   );
