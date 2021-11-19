@@ -8,8 +8,8 @@ const Search = ({ getImagesFromPixbay }) => {
   const [amount, setAmount] = useState(5);
 
   const handleSearchSubmit = (e) => {
-    setError("");
     e.preventDefault();
+    setError("");
     if (text.length > 0 && text !== "") {
       setError("");
       getImageFromPixbay(text, amount).then((res) => {

@@ -27,8 +27,29 @@
   width: 1.5rem;
   cursor: pointer;
 }
-.container img {
+.headerClose img {
+  width: 100%;
+}
+.image {
+  width: 70%;
+  height: 80%;
+  margin-top: 2rem;
+}
+.image img {
   width: 100%;
   height: 100%;
   border-radius: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .singleImageBox {
+    width: 90%;
+    height: auto;
+  }
+  .headerClose {
+    width: 1rem;
+  }
+  .image {
+    width: 90%;
+  }
 }

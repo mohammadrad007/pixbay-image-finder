@@ -17,8 +17,14 @@ const SingleImage = ({ image, closeSingleImage }) => {
             <img src={close} alt="" />
           </div>
         </div>
-        <div className={classes.singleImageBox}>
+        <div className={classes.image}>
           <img src={url} alt={`${type} ${name}`} />
+        </div>
+        <div>
+          <p>Tags:</p>
+          {tags.split(", ").map((tag, index) => (
+            <span key={index}>#{tag} </span>
+          ))}
         </div>
       </div>
     </div>
