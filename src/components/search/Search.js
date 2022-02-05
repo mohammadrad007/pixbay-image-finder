@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import { getImageFromPixbay } from "../../services/search";
 import classes from "./search.module.css";
+
 const Search = ({ getImagesFromPixbay }) => {
   const [text, setText] = useState("dog");
   const [error, setError] = useState("");
@@ -21,6 +22,7 @@ const Search = ({ getImagesFromPixbay }) => {
       setError("Please Fill Search Box");
     }
   };
+
   return (
     <>
       <form className={classes.formSearch} onSubmit={handleSearchSubmit}>

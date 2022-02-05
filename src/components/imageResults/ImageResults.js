@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import classes from "./imageResult.module.css";
 import fullScreen from "./../../assesst/full.svg";
+
+import classes from "./imageResult.module.css";
+
 const ImageResult = ({ images, showSingleImage }) => {
   return (
     <>

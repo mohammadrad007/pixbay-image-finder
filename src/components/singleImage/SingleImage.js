@@ -1,6 +1,7 @@
 import React from "react";
-import classes from "./singleImage.module.css";
 import close from "./../../assesst/close.svg";
+
+import classes from "./singleImage.module.css";
 
 const SingleImage = ({ image, closeSingleImage }) => {
   console.log(image);
